@@ -29,8 +29,12 @@ const STAGE_STATUS_LABEL = {
 };
 
 function fetchCsv(url) {
+  // Кэш-бастинг: GitHub Pages какое-то время отдаёт старую версию файла
+  // из CDN. Добавляем метку времени в URL, чтобы браузер и CDN не
+  // подсовывали закэшированную версию после каждого обновления CSV.
+  const bustedUrl = url + (url.includes("?") ? "&" : "?") + "_=" + Date.now();
   return new Promise((resolve, reject) => {
-    Papa.parse(url, {
+    Papa.parse(bustedUrl, {
       download: true,
       header: true,
       skipEmptyLines: true,
