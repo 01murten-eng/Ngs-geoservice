@@ -15,8 +15,8 @@ const CONFIG = {
   // Замените на ссылки вида:
   // "https://docs.google.com/spreadsheets/d/ВАШ_ID/pub?gid=0&single=true&output=csv"
   // когда заведёте Google Таблицу для еженедельного ввода.
-  SITES_CSV_URL: "data/sites.csv",
-  STAGES_CSV_URL: "data/stages.csv",
+  SITES_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRB3ig_Z7TIFA5g9BbuEAnSO1eMs4NyEzTg7bl9nQ2RgUCfrWJnjs02DvXLvaQ94nrAlsAR-qJqGu0u/pub?gid=401547179&single=true&output=csv",
+  STAGES_CSV_URL: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRpGDTyBSlHZWGSiCiwqnEhm3qzVJZm-MR6ztnpJhT4Ghaetrt7LHfE6Y37qO9w4Wegzng5lTX4AzVX/pub?gid=1405351011&single=true&output=csv",
 
   // Дедлайны актирования — общие для всех участков, меняются редко.
   STAGE_DEADLINES: {
