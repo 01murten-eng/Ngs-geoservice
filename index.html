@@ -65,17 +65,21 @@
   </aside>
 </main>
 
-<section class="stages-overview" aria-label="Этапы актирования">
-  <h2>Актирование по этапам</h2>
-  <div id="stages-overview"></div>
-</section>
+<details class="dashboard-toggle">
+  <summary>Этапы и динамика по неделям</summary>
 
-<section class="trend" aria-label="Динамика выполнения">
-  <h2>Динамика выполнения по неделям</h2>
-  <div class="chart-wrap">
-    <canvas id="trend-chart"></canvas>
-  </div>
-</section>
+  <section class="stages-overview" aria-label="Этапы актирования">
+    <h2>Актирование по этапам</h2>
+    <div id="stages-overview"></div>
+  </section>
+
+  <section class="trend" aria-label="Динамика выполнения">
+    <h2>Динамика выполнения по неделям</h2>
+    <div class="chart-wrap">
+      <canvas id="trend-chart"></canvas>
+    </div>
+  </section>
+</details>
 
 <footer class="footer">
   <p>Открытый исходный код проекта. Данные обновляются вручную раз в неделю через связанную таблицу.</p>
