@@ -52,14 +52,6 @@ a:hover { color: var(--done); }
 
 .topbar__title { display: flex; gap: 14px; align-items: flex-start; }
 
-.topbar__mark {
-  width: 10px;
-  height: 34px;
-  margin-top: 4px;
-  background: linear-gradient(180deg, var(--progress) 0%, var(--progress) 33%, var(--done) 33%, var(--done) 66%, var(--problem) 66%);
-  flex-shrink: 0;
-}
-
 .topbar h1 {
   font-size: clamp(20px, 2.4vw, 27px);
   letter-spacing: -0.01em;
@@ -97,40 +89,45 @@ a:hover { color: var(--done); }
 
 @media (max-width: 760px) { .header-art { display: none; } }
 
-/* ---------- Stats strip ---------- */
+/* ---------- Stats: сводная таблица, как в бумажном отчёте ---------- */
 .stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0;
-  padding: 0 clamp(20px, 4vw, 48px);
+  padding: 22px clamp(20px, 4vw, 48px) 26px;
   border-bottom: 1px solid var(--line);
+  overflow-x: auto;
 }
 
-.stat {
-  padding: 18px 28px 20px 0;
-  margin-right: 28px;
-  border-right: 1px solid var(--line);
-  min-width: 140px;
-}
-.stat:last-child { border-right: none; }
+.stats-table { border-collapse: collapse; }
 
-.stat__value {
+.stats-table caption {
+  text-align: left;
+  font-style: italic;
+  color: var(--text-faint);
+  font-size: 13px;
+  margin-bottom: 10px;
+  caption-side: top;
+}
+
+.stats-table th {
+  text-align: left;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-dim);
+  padding: 0 36px 8px 0;
+  border-bottom: 1px solid var(--text);
+  white-space: nowrap;
+}
+
+.stats-table td {
   font-family: var(--font-mono);
-  font-size: 30px;
-  font-weight: 500;
+  font-size: 28px;
+  padding: 10px 36px 0 0;
   line-height: 1;
 }
-.stat__value.plan { color: var(--plan); }
-.stat__value.progress { color: var(--progress); }
-.stat__value.done { color: var(--done); }
-.stat__value.problem { color: var(--problem); }
-
-.stat__label {
-  display: block;
-  margin-top: 6px;
-  color: var(--text-dim);
-  font-size: 12.5px;
-}
+.stats-table td.plan { color: var(--plan); }
+.stats-table td.progress { color: var(--progress); }
+.stats-table td.done { color: var(--done); }
+.stats-table td.problem { color: var(--problem); }
 
 /* ---------- Layout: map + sidebar ---------- */
 .layout {
