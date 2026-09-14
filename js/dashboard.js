@@ -23,7 +23,7 @@ function renderStats(sites) {
           <th>Завершено</th>
           <th>В работе</th>
           <th>Не начато</th>
-          <th>Проблемные</th>
+          <th>Не актирован</th>
         </tr>
       </thead>
       <tbody>
@@ -46,7 +46,7 @@ function renderFilters(sites, onFilter) {
   const items = [
     ["all", "Все"],
     ["progress", "В работе"],
-    ["problem", "Проблемные"],
+    ["problem", "Не актирован"],
     ["done", "Завершено"],
     ["plan", "Не начато"],
   ];
@@ -159,7 +159,7 @@ function renderTrendChart(sites) {
   });
 
   const ctx = document.getElementById("trend-chart");
-  new Chart(ctx, {
+  return new Chart(ctx, {
     type: "line",
     data: {
       labels: dates.map(formatDate),
@@ -167,12 +167,12 @@ function renderTrendChart(sites) {
         {
           label: "Выполнено по проекту, %",
           data: avgs,
-          borderColor: "#b8860b",
-          backgroundColor: "rgba(184,134,11,0.12)",
+          borderColor: "#a8632c",
+          backgroundColor: "rgba(168,99,44,0.12)",
           fill: true,
           tension: 0.25,
           pointRadius: 3,
-          pointBackgroundColor: "#b8860b",
+          pointBackgroundColor: "#a8632c",
         },
       ],
     },
@@ -184,11 +184,11 @@ function renderTrendChart(sites) {
         y: {
           min: 0,
           max: 100,
-          ticks: { color: "#5b584e", callback: (v) => v + "%" },
-          grid: { color: "#ded9cc" },
+          ticks: { color: "#4d4842", callback: (v) => v + "%" },
+          grid: { color: "#e3ddcf" },
         },
         x: {
-          ticks: { color: "#5b584e" },
+          ticks: { color: "#4d4842" },
           grid: { display: false },
         },
       },
