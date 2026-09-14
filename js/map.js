@@ -1,17 +1,17 @@
 // Инициализация карты и отрисовка участков.
 
 const STATUS_COLOR = {
-  plan: "#7c8d81",
-  progress: "#b8860b",
-  done: "#4f7a5c",
-  problem: "#a13f2b",
+  plan: "#6e6a63",
+  progress: "#a8632c",
+  done: "#3f7d6e",
+  problem: "#8c3223",
 };
 
 const STAGE_COLOR = {
-  not_started: "#c8c3b0",
-  submitted: "#b8860b",
-  accepted: "#4f7a5c",
-  overdue: "#a13f2b",
+  not_started: "#cec8b9",
+  submitted: "#a8632c",
+  accepted: "#3f7d6e",
+  overdue: "#8c3223",
 };
 
 let leafletMap = null;
@@ -83,7 +83,7 @@ function popupHtml(site) {
 function renderAdminLayers(countryGeo, regionsGeo) {
   L.geoJSON(regionsGeo, {
     style: {
-      color: "#4a5c52",
+      color: "#5b564f",
       weight: 1,
       fill: false,
       interactive: false,
@@ -92,7 +92,7 @@ function renderAdminLayers(countryGeo, regionsGeo) {
 
   L.geoJSON(countryGeo, {
     style: {
-      color: "#71847a",
+      color: "#857e73",
       weight: 2,
       fill: false,
       interactive: false,
