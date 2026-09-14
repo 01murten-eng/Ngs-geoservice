@@ -5,7 +5,7 @@ const STATUS_LABEL = {
   plan: "План",
   progress: "В работе",
   done: "Завершено",
-  problem: "Проблема",
+  problem: "Не актирован",
 };
 
 const STATUS_KEY = {
