@@ -15,30 +15,27 @@ function renderStats(sites) {
 
   const el = document.getElementById("stats");
   el.innerHTML = `
-    <div class="stat">
-      <span class="stat__value">${total}</span>
-      <span class="stat__label">Участков всего (НГС: ${ngsCount} · подрядчики: ${subCount})</span>
-    </div>
-    <div class="stat">
-      <span class="stat__value">${avg}%</span>
-      <span class="stat__label">Среднее выполнение по проекту</span>
-    </div>
-    <div class="stat">
-      <span class="stat__value done">${byStatus.done}</span>
-      <span class="stat__label">Завершено</span>
-    </div>
-    <div class="stat">
-      <span class="stat__value progress">${byStatus.progress}</span>
-      <span class="stat__label">В работе</span>
-    </div>
-    <div class="stat">
-      <span class="stat__value plan">${byStatus.plan}</span>
-      <span class="stat__label">Не начато</span>
-    </div>
-    <div class="stat">
-      <span class="stat__value problem">${byStatus.problem}</span>
-      <span class="stat__label">Проблемные</span>
-    </div>
+    <table class="stats-table">
+      <caption>Сводка на сегодня — ${total} участков (НГС ${ngsCount}, подрядчики ${subCount})</caption>
+      <thead>
+        <tr>
+          <th>Среднее выполнение</th>
+          <th>Завершено</th>
+          <th>В работе</th>
+          <th>Не начато</th>
+          <th>Проблемные</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>${avg}%</td>
+          <td class="done">${byStatus.done}</td>
+          <td class="progress">${byStatus.progress}</td>
+          <td class="plan">${byStatus.plan}</td>
+          <td class="problem">${byStatus.problem}</td>
+        </tr>
+      </tbody>
+    </table>
   `;
 }
 
@@ -58,7 +55,7 @@ function renderFilters(sites, onFilter) {
   el.innerHTML = items
     .map(
       ([key, label]) =>
-        `<button class="filter-btn${key === "all" ? " active" : ""}" data-filter="${key}">${label} · ${counts[key]}</button>`
+        `<button class="filter-btn${key === "all" ? " active" : ""}" data-filter="${key}">${label} (${counts[key]})</button>`
     )
     .join("");
 
