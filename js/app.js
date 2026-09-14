@@ -32,7 +32,14 @@ async function main() {
   renderSiteList(sites, (siteId) => focusSite(siteId));
   renderMap(sites, boundaries, (siteId) => focusSite(siteId));
   renderStageOverview(sites);
-  renderTrendChart(sites);
+  const trendChart = renderTrendChart(sites);
+
+  const toggle = document.querySelector(".dashboard-toggle");
+  if (toggle) {
+    toggle.addEventListener("toggle", () => {
+      if (toggle.open) trendChart.resize();
+    });
+  }
 }
 
 main();
