@@ -1,16 +1,16 @@
 :root {
-  --bg: #f4f2ea;
-  --panel: #fdfcf8;
-  --panel-alt: #ece8db;
-  --line: #d9d4c2;
-  --text: #211e17;
-  --text-dim: #5b5747;
-  --text-faint: #8c8874;
+  --bg: #f1efe9;
+  --panel: #fbfaf6;
+  --panel-alt: #e8e4d9;
+  --line: #d3cdc0;
+  --text: #211d1a;
+  --text-dim: #4d4842;
+  --text-faint: #857e73;
 
-  --plan: #7c8d81;
-  --progress: #b8860b;
-  --done: #4f7a5c;
-  --problem: #a13f2b;
+  --plan: #6e6a63;
+  --progress: #a8632c;
+  --done: #3f7d6e;
+  --problem: #8c3223;
 
   --font-sans: 'Times New Roman', Times, Georgia, serif;
   --font-mono: 'Times New Roman', Times, Georgia, serif;
@@ -148,7 +148,7 @@ a:hover { color: var(--done); }
   position: absolute;
   left: 14px;
   bottom: 14px;
-  background: rgba(253, 252, 248, 0.94);
+  background: rgba(251, 250, 246, 0.94);
   border: 1px solid var(--line);
   padding: 10px 14px;
   font-size: 12.5px;
@@ -241,9 +241,21 @@ a:hover { color: var(--done); }
 .dot.problem { background: var(--problem); }
 
 /* ---------- Stages overview ---------- */
-.stages-overview {
-  padding: 26px clamp(20px, 4vw, 48px) 6px;
+.dashboard-toggle {
   border-top: 1px solid var(--line);
+}
+.dashboard-toggle summary {
+  padding: 14px clamp(20px, 4vw, 48px);
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 13.5px;
+  font-style: italic;
+}
+.dashboard-toggle summary:hover { color: var(--text); }
+.dashboard-toggle[open] summary { border-bottom: 1px solid var(--line); }
+
+.stages-overview {
+  padding: 22px clamp(20px, 4vw, 48px) 6px;
 }
 .stages-overview h2 { font-size: 15px; margin-bottom: 14px; }
 
@@ -324,7 +336,7 @@ a:hover { color: var(--done); }
   width: 20px;
   height: 20px;
   border-radius: 2px;
-  color: #fdfcf8;
+  color: #fbfaf6;
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 600;
