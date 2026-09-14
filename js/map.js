@@ -72,10 +72,10 @@ function popupHtml(site) {
       ${(() => {
         const withReport = [...site.stages].reverse().find((s) => s.status === "accepted" && s.reportLink);
         return withReport
-          ? `<a href="${withReport.reportLink}" target="_blank" rel="noopener">Открыть отчёт по этапу ${withReport.stage} →</a>`
+          ? `<a href="${withReport.reportLink}" target="_blank" rel="noopener">Открыть отчёт по этапу ${withReport.stage}</a>`
           : "";
       })()}
-      ${site.tzLink ? `<a href="${site.tzLink}" target="_blank" rel="noopener">Открыть ТЗ участка →</a>` : ""}
+      ${site.tzLink ? `<a href="${site.tzLink}" target="_blank" rel="noopener">Открыть ТЗ участка</a>` : ""}
     </div>
   `;
 }
