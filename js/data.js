@@ -18,6 +18,7 @@ const STATUS_KEY = {
 const STAGE_STATUS_KEY = {
   "не начат": "not_started",
   "подготовлен": "submitted",
+  "в работе": "submitted",
   "актирован": "accepted",
 };
 
@@ -115,9 +116,10 @@ async function loadAllData() {
       };
     });
 
-  // Отчётная дата — самая свежая дата подписания акта среди всех участков.
+  // Отчётная дата — самая свежая дата подписания акта среди актированных этапов.
   const actDates = Object.values(stagesBySite)
     .flat()
+    .filter((s) => s.status === "accepted")
     .map((s) => s.actDate)
     .filter(Boolean)
     .sort();
